@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Ebook Project</title>
+
+<style>
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #f5f5f5;
+  }
+
+  
+  nav {
+    background: #111;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  nav .logo {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  nav a:hover {
+    color: #ff4d6d;
+  }
+
+
+  #content {
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 20px;
+    animation: fade 0.5s ease;
+  }
+
+  @keyframes fade {
+    from {opacity: 0; transform: translateY(10px);}
+    to {opacity: 1; transform: translateY(0);}
+  }
+
+ 
+  .flex {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+
+
+  .card {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  }
+
+  
+  .btn {
+    background: #ff4d6d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  .btn:hover {
+    background: #e63e5c;
+  }
+
+  img {
+    max-width: 200px;
+    border-radius: 10px;
+  }
+
+  .circle {
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+  }
+
+  iframe {
+    width: 100%;
+    height: 600px;
+    border: none;
+    border-radius: 10px;
+  }
+
+  h1, h2 {
+    color: #111;
+  }
+
+  p {
+    color: #555;
+  }
+
+</style>
+</head>
+
+<body>
+
+<nav>
+  <div class="logo">Our Ebook</div>
+
+  <div>
+    <a onclick="mostrar('home')">Home</a>
+    <a onclick="mostrar('libro')">Libro</a>
+    <a onclick="mostrar('sobre el libro')">Sobre el libro</a>
+    <a onclick="mostrar('contacto')">Contacto</a>
+  </div>
+</nav>
+
+<div id="content"></div>
+
+<script>
+function mostrar(seccion) {
+
+  let contenido = "";
+
+  if (seccion === "home") {
+    contenido = `
+      <div class="flex">
+
+        <div class="card">
+          <h1>Nuestro Ebook</h1>
+          <p>Un libro de poesía inspirado en emociones, experiencias y momentos únicos.</p>
+          <button class="btn" onclick="mostrar('book')">Leer ahora</button>
+        </div>
+
+        <div class="card">
+          <img src="https://via.placeholder.com/200x300">
+        </div>
+
+        <div class="card">
+          <h3>Autoras</h3>
+          <img src="https://via.placeholder.com/120" class="circle">
+          <img src="https://via.placeholder.com/120" class="circle">
+          <p>Dos autoras apasionadas por la escritura.</p>
+        </div>
+
+      </div>
+    `;
+  }
+
+  if (seccion === "libro") {
+    contenido = `
+      <div class="card">
+        <h2>Leer el libro</h2>
+        <iframe src="ebook.pdf"></iframe>
+      </div>
+    `;
+  }
+
+  if (seccion === "sobre el libro") {
+    contenido = `
+      <div class="card">
+        <h2>About the Book</h2>
+        <p>
+        Este libro nace de nuestras emociones, pensamientos y vivencias.
+        Es una colección de poemas que busca conectar con quienes lo leen.
+        </p>
+      </div>
+    `;
+  }
+
+  if (seccion === "contacto") {
+    contenido = `
+      <div class="card">
+        <h2>Contacto</h2>
+        <p>Tel: 1234-5678</p>
+        <p>Instagram: @nuestroebook</p>
+      </div>
+    `;
+  }
+
+  document.getElementById("content").innerHTML = contenido;
+}
+
+mostrar("home");
+</script>
+
+</body>
+</html>
