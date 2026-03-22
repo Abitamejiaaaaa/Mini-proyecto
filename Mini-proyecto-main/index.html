@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>De ti a mí</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-900 text-white">
+
+
+  <header class="bg-gray-900 fixed w-full z-20">
+    <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Proyecto Ebook</span>
+          <img src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="" class="h-8 w-auto" />
+        </a>
+      </div>
+    
+      <div class="flex lg:hidden">
+        <button id="btn-hamburguesa" type="button" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-400">
+          <span class="sr-only">Abrir menú</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" class="h-6 w-6">
+            <path d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+    
+      <div class="hidden lg:flex lg:flex-1 lg:justify-center lg:gap-x-12">
+        <a href="#" onclick="mostrarSeccion('home')" class="text-sm font-semibold text-white">Home</a>
+        <a href="#" onclick="mostrarSeccion('libro')" class="text-sm font-semibold text-white">Libro</a>
+        <a href="#" onclick="mostrarSeccion('sobre-el-libro')" class="text-sm font-semibold text-white">Sobre el libro</a>
+        <a href="#" onclick="mostrarSeccion('contacto')" class="text-sm font-semibold text-white">Contacto</a>
+      </div>
+    </nav>
+   
+    <div id="menu-movil" class="hidden flex-col gap-4 bg-gray-900 p-6 absolute top-16 left-0 w-full">
+      <a href="#" onclick="mostrarSeccion('home'); toggleMenu()" class="text-white font-semibold">Home</a>
+      <a href="#" onclick="mostrarSeccion('libro'); toggleMenu()" class="text-white font-semibold">Libro</a>
+      <a href="#" onclick="mostrarSeccion('sobre-el-libro'); toggleMenu()" class="text-white font-semibold">Sobre el libro</a>
+      <a href="#" onclick="mostrarSeccion('contacto'); toggleMenu()" class="text-white font-semibold">Contacto</a>
+    </div>
+  </header>
+
+
+  <section id="home" class="px-6 py-32 max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-10 mt-24">
+    <div class="flex flex-col justify-center">
+      <h1 class="text-4xl font-bold text-white mb-4">Nuestro libro</h1>
+      <p class="text-gray-300 mb-6">
+        “De ti a mí” es un libro de poesía que captura emociones profundas, momentos cotidianos y experiencias compartidas entre sus autoras. Cada poema refleja sentimientos, recuerdos y sueños, plasmados con palabras que buscan tocar el corazón de cada lector y hacerlo reflexionar.
+      </p>
+      <a href="#" onclick="mostrarSeccion('libro')" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-3 rounded">Leer ahora</a>
+    </div>
+    <div class="flex justify-center items-center">
+      <img src="IMG/libro.png" alt="Portada del libro" class="rounded-lg shadow-lg w-full max-w-sm">
+    </div>
+    <div class="flex flex-col justify-center items-start">
+      <h2 class="text-2xl font-semibold text-white mb-4">Autoras</h2>
+      <div class="flex gap-4">
+        <img src="IMG/abigail.jpg" alt="Abigail Mejía" class="w-24 h-24 rounded-full object-cover border-2 border-indigo-600">
+        <img src="IMG/tatiana.jpg" alt="Tatiana Cruz" class="w-24 h-24 rounded-full object-cover border-2 border-indigo-600">
+      </div>
+    </div>
+  </section>
+
+ 
+  <section id="libro" class="w-full bg-gray-800 py-10 hidden">
+    <div class="max-w-3xl mx-auto flex flex-col gap-8">
+      <img src="IMG/1.png" alt="Página 1" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/2.png" alt="Página 2" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/3.png" alt="Página 3" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/4.png" alt="Página 4" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/5.png" alt="Página 5" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/6.png" alt="Página 6" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/7.png" alt="Página 7" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/8.png" alt="Página 8" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/9.png" alt="Página 9" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/10.png" alt="Página 10" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/11.png" alt="Página 11" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/12.png" alt="Página 12" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/13.png" alt="Página 13" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/14.png" alt="Página 14" class="w-full rounded-lg shadow-lg">
+      <img src="IMG/15.png" alt="Página 15" class="w-full rounded-lg shadow-lg">
+    </div>
+  </section>
+
+
+<section id="sobre-el-libro" class="relative isolate overflow-hidden bg-gray-900 py-24 sm:py-32 hidden">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl lg:mx-0">
+      <h2 class="text-5xl font-semibold tracking-tight text-white sm:text-7xl">Sobre el libro</h2>
+      <p class="mt-8 text-lg font-medium text-gray-300 sm:text-xl/8">
+        De ti a mí es nuestro libro de poemas donde exploramos el amor, la pérdida y el renacer personal. Cada verso nace de emociones reales y momentos que vivimos: desde la ilusión de los primeros encuentros, pasando por el dolor de la ruptura, hasta el proceso de encontrarnos a nosotras mismas. Con estos poemas queremos que quienes los lean sientan, reflexionen y recuerden que el verdadero amor comienza por aprender a amarse a uno mismo.
+      </p>
+    </div>
+    
+  
+    <div class="mx-auto mt-10 max-w-2xl lg:mx-0 lg:max-w-none">
+      <dl class="mt-16 grid grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2 lg:grid-cols-4">
+        <div class="flex flex-col-reverse gap-1">
+          <dt class="text-base text-gray-300">Poemas</dt>
+          <dd class="text-4xl font-semibold text-white">7</dd>
+        </div>
+        <div class="flex flex-col-reverse gap-1">
+          <dt class="text-base text-gray-300">Autor@s</dt>
+          <dd class="text-4xl font-semibold text-white">2</dd>
+        </div>
+        <div class="flex flex-col-reverse gap-1">
+          <dt class="text-base text-gray-300">Páginas</dt>
+          <dd class="text-4xl font-semibold text-white">15</dd>
+        </div>
+        <div class="flex flex-col-reverse gap-1">
+          <dt class="text-base text-gray-300">Años de inspiración</dt>
+          <dd class="text-4xl font-semibold text-white">1</dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+
+  <section id="contacto" class="bg-gray-900 py-24 sm:py-32 hidden">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 sm:grid-cols-2 gap-16">
+      
+      <div class="flex flex-col items-center">
+        <img src="IMG/abigail.jpg" alt="Abigail Mejía" class="w-32 h-32 rounded-full object-cover border-2 border-indigo-600 mb-4">
+        <h3 class="text-xl font-semibold text-white">Abigail Mejía</h3>
+        <p class="text-gray-400 mb-2">Co-autora / Escritora</p>
+        <a href="https://www.instagram.com/aabitx_?igsh=MTVvc29oazJlOWJuaQ==" target="_blank" class="text-indigo-500 hover:underline">Instagram</a>
+      </div>
+      
+      <div class="flex flex-col items-center">
+        <img src="IMG/tatiana.jpg" alt="Tatiana Cruz" class="w-32 h-32 rounded-full object-cover border-2 border-indigo-600 mb-4">
+        <h3 class="text-xl font-semibold text-white">Tatiana Cruz</h3>
+        <p class="text-gray-400 mb-2">Co-autora / Escritora</p>
+        <a href="https://www.instagram.com/tato_cruz11?igsh=YTFvbTlvZ21wam1n" target="_blank" class="text-indigo-500 hover:underline">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+
+  <script>
+  
+    function mostrarSeccion(seccion) {
+      document.querySelectorAll('section').forEach(sec => sec.classList.add('hidden'));
+      document.getElementById(seccion).classList.remove('hidden');
+      window.scrollTo({ top: 0, behavior: 'smooth' }); // sube al inicio
+    }
+
+  
+    const btn = document.getElementById('btn-hamburguesa');
+    const menu = document.getElementById('menu-movil');
+    btn.addEventListener('click', toggleMenu);
+
+    function toggleMenu() {
+      menu.classList.toggle('hidden');
+    }
+  </script>
+
+</body>
+</html>
